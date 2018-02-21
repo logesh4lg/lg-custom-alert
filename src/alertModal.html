@@ -1,0 +1,7 @@
+<div class="modal-body" id="modal-body">
+    <span ng-bind-html="modal_message | trustAsHtml"></span>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-show="show_cancel" ng-click="close_modal()" tabindex="-1">Cancel</button>
+    <button class="btn btn-{{btn_type}}" type="button" ng-click="call_fun()" tabindex="1" style="text-transform: capitalize">{{type}}</button>
+</div>

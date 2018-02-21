@@ -1,0 +1,26 @@
+{
+  "name": "lg-custom-alert",
+  "version": "1.0.0",
+  "description": "Custom alert on clicking using Boostarap 3 and Angular 1.6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logesh4cspl/lg-custom-alert.git"
+  },
+  "keywords": [
+    "angularjs",
+    "angular",
+    "boostarap",
+    "alerts",
+    "bootstrap-alert"
+  ],
+  "author": "logesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/logesh4cspl/lg-custom-alert/issues"
+  },
+  "homepage": "https://github.com/logesh4cspl/lg-custom-alert#readme"
+}
