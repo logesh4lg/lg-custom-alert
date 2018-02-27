@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Test customAlert </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+    <hr>
+
+    <br>
+
+    <hr>
+
+    <div class="container" ng-app="app">
+        <div class="row">
+            <div class>
+                <button class="btn btn-primary"
+                    lg-alert="just_log()"
+                    lg-message="Please confirm to log the message"
+                    lg-size="lg"
+                    lg-type="confirm">
+                    Click for Alert
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var app = angular.module("app",["lg.customAlert","ui.bootstrap"]);
+        app.controller("textCtrl",['$scope', '$log', function($scope, $log, ){
+
+             $log.log("Test controller loaded");
+
+             $scope.just_log = function(){
+                 console.log("Logging for the alert success");
+             };
+
+        }]);
+
+    </script>
+    <script src="/src/lg-custom-alert.js" charset="utf-8"></script>
+</body>
+</html>
