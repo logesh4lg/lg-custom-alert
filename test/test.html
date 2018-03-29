@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Test customAlert </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js" charset="utf-8"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Test customAlert </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
 </head>
+
 <body>
 
-    <hr>
+  <hr><br><hr>
 
-    <br>
+  <div class="container" ng-app="app">
+    <div ng-controller="textCtrl">
+      <div class="row" ng-repeat="alertType in alertTypes" style="border-bottom: 2px solid #eee;">
 
-    <hr>
+        <h3 class="text-capitalize"> {{alertType}} Alerts</h3>
 
-    <div class="container" ng-app="app">
-        <div class="row">
-            <div class>
-                <button class="btn btn-primary"
-                    lg-alert="just_log()"
-                    lg-message="Please confirm to log the message"
-                    lg-size="lg"
-                    lg-type="confirm">
-                    Click for Alert
-                </button>
-            </div>
+        <div class="col-xs-6 col-sm-4" ng-repeat="modalSize in modalSizes">
+
+          <button class="btn btn-block text-capitalize"
+              ng-class = "{'btn-primary' : alertType == 'confirm',
+                'btn-success' : alertType == 'ok',
+                'btn-warning' : alertType == 'proceed',
+                'btn-danger'  : alertType == 'delete'}"
+              style="margin-bottom: 30px;"
+              lg-alert="just_log(alertType, modalSize)"
+              lg-message="Please {{alertType}} to log the message"
+              lg-size="{{modalSize}}" lg-type="{{alertType}}">
+            {{alertType}} Box Alert - <span class="text-lowercase"> {{modalSize}} </span>
+          </button>
+
         </div>
+
+      </div>
     </div>
+  </div>
 
 
-    <script type="text/javascript">
+  <script type="text/javascript">
+    var app = angular.module("app", ["lg.customAlert", "ui.bootstrap"]);
+    app.controller("textCtrl", ['$scope', '$log', function($scope, $log, ) {
 
-        var app = angular.module("app",["lg.customAlert","ui.bootstrap"]);
-        app.controller("textCtrl",['$scope', '$log', function($scope, $log, ){
+      $log.log("Test controller loaded");
 
-             $log.log("Test controller loaded");
+      $scope.alertTypes = ['confirm', 'proceed', 'ok', 'delete'];
+      $scope.modalSizes = ['lg', 'md', 'sm'];
 
-             $scope.just_log = function(){
-                 console.log("Logging for the alert success");
-             };
+      $scope.just_log = function(alertType, modalSize) {
+        console.log(`Logging for the ${alertType}-modal-${modalSize}`);
+      };
 
-        }]);
-
-    </script>
-    <script src="/src/lg-custom-alert.js" charset="utf-8"></script>
+    }]);
+  </script>
+  <script src="../dist/lg.customAlert.min.js" charset="utf-8"></script>
 </body>
+
 </html>

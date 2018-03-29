@@ -38,9 +38,9 @@ angular.module('lg.customAlert', [])
                     var modalInstance = $uibModal.open({
                         animation: true,
                         size: (scope.lgSize) ? scope.lgSize : 'sm',
-                        templateUrl: '/src/alertModal.html',
-                        controller: ['$scope', function ($scope) {
-                            $scope.modal_message = scope.lgMessage;
+                        templateUrl: "lg-custom-alert/alertModal.html",
+                        controller: ['$scope', '$sce', function ($scope, $sce) {
+                            $scope.modal_message = $sce.trustAsHtml(scope.lgMessage);
                             $scope.type = scope.lgType;
                             $scope.btn_type = {
                                 'delete'    : 'danger',
