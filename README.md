@@ -51,8 +51,7 @@ Custom alert using Boostarap 3 and Angular 1.6
       - `lg-size`     - Size to be displayed in the modal `['lg', 'md', 'sm']`
           - `lg` - Large size popup or alert
           - `md` - Medium size popup or alert
-          - `sm` - Small size popup or alert
-          **** By Default Its `sm` ****
+          - `sm` - Small size popup or alert ###### - Default
       - `lg-type`     - Type of the modal to be displayed in the modal `['confirm', 'proceed', 'ok', 'delete']`
           - `confirm` - Confirmation Popup Before any updates
           - `proceed` - Confirmation Popup Before any process which may affect the system
