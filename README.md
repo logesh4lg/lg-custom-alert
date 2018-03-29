@@ -50,6 +50,10 @@ Custom alert using Boostarap 3 and Angular 1.6
       - `lg-message`  - Message to be displayed in the modal
       - `lg-size`     - Size to be displayed in the modal `['lg', 'md', 'sm']`
       - `lg-type`     - Type of the modal to be displayed in the modal `['confirm', 'proceed', 'ok', 'delete']`
+          - `confirm` - Confirmation Popup Before any updates
+          - `proceed` - Confirmation Popup Before any process which may affect the system
+          - `ok` - Information Popup - shows only OK button
+          - `delete` - Confirmation Popup Before any delete
 
       #### Example
       ```html
