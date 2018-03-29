@@ -1,6 +1,6 @@
 {
   "name": "lg-custom-alert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom alert on clicking using Boostarap 3 and Angular 1.6",
   "main": "dist/lg.customAlert.min.js",
   "files": [
