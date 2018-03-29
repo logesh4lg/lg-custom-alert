@@ -29,11 +29,10 @@ Custom alert using Boostarap 3 and Angular 1.6
     ```
 
 
-3. Import the `lg.customAlert.min.js` javascript and css file into your HTML file
+3. Import `lg.customAlert.min.js` javascript and css file into your HTML file
 
     ```html
-    <script src="lib/ion-datetime-picker/dist/ion-datetime-picker.min.js"></script>
-    <link href="lib/ion-datetime-picker/dist/ion-datetime-picker.min.css" rel="stylesheet">
+    <script src="dist/lg.customAlert.min.js"></script>
     ```
 
 # Usage
@@ -45,18 +44,10 @@ Custom alert using Boostarap 3 and Angular 1.6
       ```
 
   2. Put `lg-alert` directive along with button elements
-
-      - `lg-alert`    - the scope function to be called after alert success
-      - `lg-message`  - Message to be displayed in the modal
-      - `lg-size`     - Size to be displayed in the modal `['lg', 'md', 'sm']`
-          - `lg` - Large size popup or alert
-          - `md` - Medium size popup or alert
-          - `sm` - Small size popup or alert - `Default`
-      - `lg-type`     - Type of the modal to be displayed in the modal `['confirm', 'proceed', 'ok', 'delete']`
-          - `confirm` - Confirmation Popup Before any updates
-          - `proceed` - Confirmation Popup Before any process which may affect the system
-          - `ok` - Information Popup - shows only OK button
-          - `delete` - Confirmation Popup Before any delete
+      `lg-alert`    - the scope function to be called after alert success
+      `lg-message`  - Message to be displayed in the modal
+      `lg-size`     - Size to be displayed in the modal `['lg', 'md', 'sm']`
+      `lg-type`     - Type of the modal to be displayed in the modal `['confirm', 'proceed', 'ok', 'delete']`
 
       #### Example
       ```html
@@ -68,5 +59,4 @@ Custom alert using Boostarap 3 and Angular 1.6
            Click for Alert
       </button>
       ```
-
-#### `Refer src/test.HTML`
+      #### Refer src/test.HTML
