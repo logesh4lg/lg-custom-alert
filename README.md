@@ -59,4 +59,4 @@ Custom alert using Boostarap 3 and Angular 1.6
            Click for Alert
       </button>
       ```
-      #### Refer src/test.HTML
+      #### Refer test/test.HTML
